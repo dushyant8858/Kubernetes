@@ -1,0 +1,76 @@
+Project 3:
+
+	0.	Click kubernetes cluster
+	0.	open GCL 
+	0.	create new cluster if you dont have 
+	0.	on macOS terminal install HELM
+
+#### HELM installation ************ 
+424  ##### https://www.helm.sh/ 
+  425  ### click >>> GET Helm
+  426  #### https://github.com/helm/helm
+  427  brew install kubernetes-helm
+  428  sudo apt-get update
+  429  kubectl cluster-info
+  430  which helm
+  431  gcloud container clusters get-credentials devops-wordpress-cluster --zone us-central1-a --project data-oasis-220308
+  432  kubectl cluster-info 
+  433  kubectl create serviceaccount --namespace kube-system tiller
+  434  kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+  435  helm init --service-account tiller
+
+  436  ###### installation of HELM is DONE>>>>>>>>
+
+
+Now
+
+438  ######## WORDPRESS Application installation ############
+  439  helm install stable/wordpress      
+## Inside the HELM chart… we already have Wordpress and MariaDB chart written
+  440  kubectl get all
+  441  kubectl get all
+  442  kubectl get all
+  443  kubectl get all
+  444  kubectl get all
+  445  kubectl get all
+  446  export SERVICE_IP=$(kubectl get svc --namespace default bunking-macaw-wordpress --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")
+  447  echo "WordPress Admin URL: http://$SERVICE_IP/admin"
+  448  echo "WordPress URL: http://$SERVICE_IP/"
+  449   echo Password: $(kubectl get secret --namespace default bunking-macaw-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
+  450  history 
+
+hit the IP on the browser
+
+edit the Wordpress application 
+
+got to GCP and browse to the Compute Engine>> VM instances >> and delete all the VM
+
+GDK and Kubernetes will automatically reinstall the pods for us though we have hit by the disaster….
+
+
+
+### intwo different windows open
+
+451 kubectl get pods -w 
+452 kubectl get events -w 
+
+
+ 454  kubectl get events -w 
+  455  clear 
+  456* 
+  457  clear 
+  458  kubectl get pods -w 
+  459  kubectl get all
+  460  kubectl get deployments
+  461  kubectl get deployments
+  462  kubectl describe deployments bunking-macaw-wordpress
+  463  kubectl describe deployments bunking-macaw-wordpress | more
+  464  kubectl get replicaSets
+  465  kubectl describebunking replicaSets bunking-macaw-wordpress-7b87d475fd 
+  466  kubectl describe bunking replicaSets bunking-macaw-wordpress-7b87d475fd | more
+  467* kubectl describe replicaSets bunking-macaw-wordpress-7b87d475fd | mor
+  468  kubectl get all -l app=bunking-macaw-wordpress
+  469  kubectl get secrets
+  470  kubectl get pods
+  471  kubectl logs bunking-macaw-wordpress-7b87d475fd-4vftp
+  472  history 

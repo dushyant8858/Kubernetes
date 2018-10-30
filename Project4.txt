@@ -1,0 +1,52 @@
+Project 4:
+
+	0.	Click kubernetes cluster
+	0.	 AND DIRECTLY TAKE THE CONCOLE OF YOUR PROJECT
+	0.	and start doing https://jenkins-x.io/getting-started/install/ for LINUX…. as GCP is linux
+
+
+
+
+Welcome to Cloud Shell! Type "help" to get started.
+Your Cloud Platform project in this session is set to data-oasis-220308.
+Use “gcloud config set project [PROJECT_ID]” to change to a different project.
+dushyant_dubaria2010@cloudshell:~ (data-oasis-220308)$ history
+    1  mkdir -p ~/.jx/bin
+    2  curl -L https://github.com/jenkins-x/jx/releases/download/v1.3.467/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
+    3  history
+    4  curl -L https://github.com/jenkins-x/jx/releases/download/v1.3.467/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
+    5  export PATH=$PATH:~/.jx/bin
+    6  echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
+    7  jx create cluster gke --skip-login
+    8  mkdir -p ~/.jx/bin
+    9  curl -L https://github.com/jenkins-x/jx/releases/download/v1.3.467/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
+   10  export PATH=$PATH:~/.jx/bin
+   11  echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
+   12  jx create cluster gke --skip-login
+   13  kubectl get all -all-namespaces | more
+   14  kubectl get all --all-namespaces | more
+   15  jx create quickstart
+   16  history
+   16  history
+
+####### edit the app file ######
+   17  ls -la
+   18  ls -ltr
+   19  cd golang-http/
+   20  ls -l
+   21  vi main.go
+   22  git status
+   23  git commit -m "changed the title of the homepage"
+   24  git push
+   25  git add .
+   26  git commit -m "changed the title of the homepage"
+   27  git push
+   28  history
+
+##### push to the production environment #####
+29 jx  promote golang-http —version 0.0.2 —evn production
+
+>>> Select: production
+
+GitHub Username: dushyant8858
+GitHub Password: *******************
