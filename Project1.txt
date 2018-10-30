@@ -1,0 +1,43 @@
+Project 1:
+
+	0.	Open GCP
+	0.	Create new Compute Engine
+	0.	name: runningcontainers
+	0.	Paste SSH key
+	0.	follow the link to install Docker: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1 
+ 	LOGS:
+    3  sudo apt-get update
+    4  sudo apt-get install     apt-transport-https     ca-certificates     curl     software-properties-common
+    5  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add    
+    10  sudo apt-key fingerprint 0EBFCD88
+   11  sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   12  sudo apt-get update
+   13  sudo apt-get install docker-ce
+   14  sudo docker run hello-world
+   15  docker --version 
+   18  apt-get install cowsay
+   19  sudo apt-get install cowsay
+   20  cowsay "my"
+   21  cowsay my
+   22  cowsay hello
+   23  sudo vi /etc/group
+   24  docker run 
+   25  history  
+
+
+	0.	docker run nginx ……. stuck inside?… so we don’t want this way
+	0.	docker run -d nginx ……running in detached mode
+	0.	docker ps 
+	0.	docker run ubuntu …… cannot get inside the ubuntu
+	0.	docker -it ubuntu ……. interactive and terminal with tty
+   54  docker ps -a
+   55  docker images 
+   56  docker rmi ea4c82dcd15a
+   57  docker images 
+   58  docker stop 9b020243cbbb d93b6c44435f f6f073cadfb9
+   59  docker rm 9b020243cbbb d93b6c44435f f6f073cadfb9
+   60  docker rmi 4ab4c602aa5e
+   61  docker images 
+   62  docker ps -a
