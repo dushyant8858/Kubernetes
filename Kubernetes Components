@@ -1,0 +1,44 @@
+In a Number of articles will show what is the Kubernetes ( K8S ) with its Components and System Architecture, In this article will show a brief of the K8S and what is the Master Node ?.
+* What is Kubernetes ?.
+
+-- K8S is a Container Orchestration System for Containerized Applications , It supports a variety of applications " Stateless - Stateful " and any containerized application.
+
+-- It has a lot of features like " Containers Grouping , Health Checking , Service Discovery , Load Balancing , System Scaling ".
+
+-- System is designed to have a Master Node and Workers " The Worker is a Node which host the Docker Engine " , There will be a Kubernetes Client on the Worker Node called " Kubectl " which communicates with the Kube API on Master Node.
+
+-- All the Configurations and Cluster states are stored in " ETCD ".
+
+* The Components of K8S Master Node :
+
+The K8S Master Node is the control panel of the K8S Topology which takes care of everything in the cluster and it consists of :
+
+" Kube-apiserver -- Kube-Controller-Manager -- Kube-Scheduler -- ETCD "
+
+** 1- Kube-apiserver :
+
+-- It is the main control panel of the K8S , We interact with it as it is considered as the front-end of the cluster state , any command run by " kubectl " it hits the apiserver then hits the etcd store to store the configuration and cluster state.
+
+** 2- Kube-Controller-Manager :
+
+--It takes care of all controllers which handle a specific task :
+
+A- Node Controller => Responsible for noticing when node goes down.
+
+B- Replication Controller => Responsible for maintaining the correct number of PODs.
+
+C- Endpoints Controller => Populates the endpoints objects " pods and services ".
+
+D- Service Account & Token Controllers => Creates default account and API Access for new namespaces.
+
+So, Kube-Controller-Manager is responsible for all controllers and create the corresponding pods to achieve the desired state.
+
+** 3- Kube-Scheduler :
+
+-- Is responsible for Monitoring the resource usage for each node and scheduling the containers according to the resource availability.
+
+** 4- ETCD :
+
+-- It is the Key Value store to provide a reliable way to store data across the cluster , Kubernetes uses it as the resistance storage of all of the API objects.
+
+*** In the next article will show the rest of the Kubernetes Architecture and System Components.
